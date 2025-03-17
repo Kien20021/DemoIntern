@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="overview">
-      <a href="#">
+      <a href="#" class="ico_overview">
         <i class="fa-solid fa-arrow-left"></i> <span>Overview Page</span></a
       >
       <div class="media_screen">
@@ -47,7 +47,7 @@
             alt="gitHub" />
         </div>
         <a href=""> <i class="fa-solid fa-download"></i>Free Download</a>
-        <span><i class="fa-solid fa-xmark"></i></span>
+        <div class="ico_close"><i class="fa-solid fa-xmark"></i></div>
       </div>
     </div>
     <header>
@@ -230,14 +230,5 @@
       <p>Copyright © 2023 - Company Name</p>
     </footer>
   </body>
-  <script>
-    document.addEventListener("scroll", function () {
-      const navStartScroll = document.getElementById("nav_start");
-      if (window.scrollY > 0) {
-        navStartScroll.classList.add("scrolled");
-      } else {
-        navStartScroll.classList.remove("scrolled");
-      }
-    });
-  </script>
+  <script src="main.js"></script>
 </html>
