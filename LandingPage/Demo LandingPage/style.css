@@ -23,20 +23,27 @@ h3 {
   background: rgba(33, 40, 50, 0.2);
   transition: all;
 }
-.Overview {
+/* overview */
+.overview {
+  position: sticky;
+  z-index: 222;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
   align-items: center;
   border-bottom: 3px solid red;
+  background-color: white;
 }
-.Overview a {
+.overview a {
   color: #21283280;
   text-decoration: none;
   padding: 8px 12px;
   font-size: 12px;
 }
-.Overview button {
+.overview button {
   border: none;
 }
 .media_screen {
@@ -56,12 +63,31 @@ h3 {
 }
 /* Header */
 .header_start {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: burlywood;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  z-index: 111;
   padding: 16px 0;
+  transition: 0.2s;
+}
+
+.header_start.scrolled {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.header_start.scrolled a {
+  color: black;
+}
+.header_start.scrolled a:hover {
+  color: rgb(220, 57, 45);
+}
+.header_start.scrolled p {
+  color: black;
+}
+.header_start.scrolled p:hover {
+  color: rgb(220, 57, 45);
 }
 .header_start p {
   font-size: 20px;
@@ -77,6 +103,12 @@ h3 {
 .header_start p:hover,
 .header_start nav a:hover {
   color: white;
+}
+.nav_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
 }
 /* setion banner */
 .banner_top {
@@ -191,43 +223,132 @@ hr {
   color: #6c757d;
 }
 
-/* free_download */
-.image_top {
+/* bg_image */
+.bg_download {
   display: flex;
   flex-wrap: wrap;
+  gap: 0px;
 }
-.item {
-  width: calc((100%-527.98) * 3);
+.item_download {
+  width: calc(100% / 3);
+  position: relative;
 }
-.image_top img {
+.item_download img {
   width: 100%;
-
+  height: 100%;
   object-fit: cover;
 }
-
-/* Footer */
-.footer {
-  padding: 128px 0;
-}
-.title_footer {
-  text-align: center;
+.item_download .category {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  opacity: 0;
+  transition-duration: 0.5s;
   display: flex;
   flex-direction: column;
-  justify-items: center;
+
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(244, 98, 58, 0.9);
 }
-.item_footer {
-  padding: 0 24px;
+.item_download .category:hover {
+  opacity: 1;
 }
-.title_footer h3 {
+/* free_download */
+.free_download {
+  background-color: rgb(33 37 41);
+  color: white;
+  padding: 128px 0;
+}
+.infor_download {
+  text-align: center;
+}
+.infor_download h3 {
   font-size: 32px;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 }
-.title_footer p {
+.free_download .btn_download {
+  padding: 20px 36px;
+  font-size: 13.6px;
+  font-weight: 700;
+  color: black;
+  border: none;
+  border-radius: 160px;
+}
+.btn_download:hover {
+  background-color: #d3d4d5;
+  transition: all;
+}
+/* form */
+.title_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 128px;
+}
+.infor_form {
+  text-align: center;
+  padding: 0 24px;
+  width: 588px;
+}
+.infor_form h2 {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+.infor_form p {
   color: #6c757d;
-  font-size: 16;
   margin: 0 0 48px;
 }
-.title_footer input {
+.total_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+.form_floating {
+  text-align: center;
+  padding: 0 24px;
+  width: 588px;
+}
+.item_form input,
+.item_form textarea,
+.item_form button {
+  width: 562px;
+  height: 24px;
   padding: 16px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+}
+.item_form textarea {
+  height: 126px;
+}
+.item_form button {
+  font-size: 13.6px;
+  font-weight: 700px;
+  padding: 20px 36px;
+  height: auto;
+  background-color: #f4623a;
+  border: none;
+  border-radius: 160px;
+}
+.contact_footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+/* section_footer */
+.section_footer {
+  padding: 128px 0;
+  background-color: rgb(248 249 250);
+  color: #6c757d;
+  text-align: center;
+}
+.section_footer p {
+  margin: 0;
+  font-size: 14px;
 }
